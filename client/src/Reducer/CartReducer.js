@@ -161,7 +161,7 @@ const CartReducer = (state, action) => {
       console.log(curElem.unit);
       if(curElem.unit==="kg")
       wt+=(curElem.Weight*1000)*curElem.Quantity;
-      else if(curElem.unit=='lit')
+      else if(curElem.unit=='lit' ||curElem.unit=='ml')
       wt+=500*curElem.Quantity;
       else
       wt+=(curElem.Weight)*curElem.Quantity;
