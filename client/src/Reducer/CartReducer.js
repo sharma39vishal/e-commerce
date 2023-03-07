@@ -161,6 +161,8 @@ const CartReducer = (state, action) => {
       console.log(curElem.unit);
       if(curElem.unit==="kg")
       wt+=(curElem.Weight*1000)*curElem.Quantity;
+      else if(curElem.unit=='lit')
+      wt+=500*curElem.Quantity;
       else
       wt+=(curElem.Weight)*curElem.Quantity;
     });
@@ -182,6 +184,7 @@ const CartReducer = (state, action) => {
       updated = disc;
       t = 1;
     }
+    updated=Math.floor(updated);
     console.log(updated,t);
     return { ...state, shipping_fee: updated, city: t }
   }
